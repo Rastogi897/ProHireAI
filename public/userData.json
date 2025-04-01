@@ -1,0 +1,43 @@
+{
+  "SoftwareEngineer": [
+    {
+      "name": "Tushar Rastogi",
+      "email": "tusharrstg001@gmail.com",
+      "phone": "8285776109",
+      "role": "Software Engineer",
+      "text": "I am a software engineer with 1 year of experience. I worked on React, Node, Express and Big Query"
+    },
+    {
+      "name": "Naman Gupta",
+      "email": "Naman07@gmail.com",
+      "phone": "8800414128",
+      "role": "Software Engineer",
+      "text": "I worked for 4 years as a software engineer. I worked on Java, Spring Boot, Maven, and Java Database connectivity."
+    },
+    {
+      "name": "Muskan Rastogi",
+      "email": "Raina11@gmail.com",
+      "phone": "7840012410",
+      "role": "Software Engineer",
+      "text": "I am a fresher, and looking for software engineer roles. I know HTML, CSS, and JavaScript."
+    }
+  ],
+  "Data Analyst": [
+    {
+      "name": "Alice",
+      "email": "alice@admin.com",
+      "phone": "1234567890",
+      "role": "Data Analyst",
+      "text": "I am the admin"
+    }
+  ],
+  "Product Designer": [
+    {
+      "name": "Bob",
+      "email": "bob@manager.com",
+      "phone": "9876543210",
+      "role": "Product Designer",
+      "text": "I manage teams"
+    }
+  ]
+}
