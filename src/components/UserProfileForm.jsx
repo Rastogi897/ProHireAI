@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import service from "../appwrite/config";
 
 const UserProfileForm = () => {
@@ -49,15 +49,15 @@ const UserProfileForm = () => {
         setSubmitMessage("Failed to create profile. Try again later!");
       }
     } catch (err) {
-      console.error(error);
-      setMessage("An error occurred while creating the profile.");
+      console.error(err);
+      setSubmitMessage("An error occurred while creating the profile.");
     }
   };
 
   return (
     <div>
       <div className="text-center text-3xl font-semibold pt-8 pb-8">
-        Let's know you <span className="blue">better!</span>
+        Let&apos;s know you <span className="blue">better!</span>
       </div>
       <div className="max-w-4xl mx-auto p-6 bg-zinc-800 rounded-lg shadow-md">
         <form

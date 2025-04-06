@@ -1,12 +1,12 @@
-import React from "react";
+import "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/HomePage/Home";
 import Layout from "./components/Layout";
-import NoPage from "./components/NoPage";
+// import NoPage from "./components/NoPage";
 import UserProfileForm from "./components/UserProfileForm";
 import HireForm from "./components/HireForm";
 import ListUsers from "./components/ListUsers";
-import Test from "./components/Test";
+import SignUp from "./components/SignIn/SignUp";
 
 const App = () => {
   console.log(import.meta.env.VITE_TEST);
@@ -18,8 +18,8 @@ const App = () => {
           <Route path="/userForm" element={<UserProfileForm />} />
           <Route path="/hireForm" element={<HireForm />} />
           <Route path="/listCandidates" element={<ListUsers />} />
-          <Route path="/test" element={<Test />} />
         </Route>
+        <Route path="/signUp" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
