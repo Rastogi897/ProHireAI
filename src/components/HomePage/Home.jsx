@@ -41,7 +41,7 @@ const Home = () => {
       </h1>
       <p className="flex justify-center pt-12 text-xl max-w-2xl text-center mx-auto text-zinc-400">
         We match the right candidates with the right job profiles. <br />
-        In less than a minute. As simple as that!
+        In less than a minute. Simple and Quick!
       </p>
       <p className="text-center pt-1 text-md font-semibold"></p>
 
