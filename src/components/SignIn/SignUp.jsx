@@ -40,7 +40,7 @@ const SignUp = () => {
         </div>
       </div>
       <div
-        className="text-3xl font-semibold cursor-pointer flex justify-center pt-4 pb-6 bg-gradient-to-b from-zinc-600 to-zinc-200 bg-clip-text text-transparent"
+        className="text-3xl font-semibold cursor-pointer flex justify-center pb-6 bg-gradient-to-b from-zinc-600 to-zinc-200 bg-clip-text text-transparent"
         // onClick={redirectHome}
       >
         ProHire

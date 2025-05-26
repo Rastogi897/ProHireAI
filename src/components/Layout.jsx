@@ -8,8 +8,8 @@ const Layout = () => {
 
   return (
     <>
-      <section className="flex flex-col min-h-screen overflow-hidden bg-gradient-to-b from-zinc-950 to-zinc-950">
-        <div className="relative z-10">
+      <section className="flex flex-col min-h-screen overflow-hidden bg-gradient-to-b from-zinc-100 to-zinc-100">
+        {/* <div className="relative z-10">
           <div className="absolute inset-x-0 top-96 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]">
             <svg
               className="h-[60rem] w-[100rem] flex-none stroke-zinc-600 opacity-40"
@@ -42,28 +42,28 @@ const Layout = () => {
               ></rect>
             </svg>
           </div>
-        </div>
+        </div> */}
 
-        <header className="text-zinc-200 py-6 mt-2 px-4 z-50">
+        <header className="text-zinc-200 py-6 px-4 z-50">
           {/*  */}
           <nav className="container mx-auto px-6">
             <div className="flex justify-between items-center">
               <div
-                className="text-2xl font-semibold cursor-pointer flex bg-gradient-to-b from-zinc-500 to-zinc-200 bg-clip-text text-transparent"
+                className="text-2xl font-semibold cursor-pointer flex bg-gradient-to-b from-zinc-950 to-zinc-800 bg-clip-text text-transparent"
                 onClick={redirectHome}
               >
                 ProHire
               </div>
               <div className="flex justify-center space-x-6">
-                <div className="text-zinc-300 px-4 py-2 hover:text-zinc-200 cursor-pointer text-lg">
+                <div className="text-zinc-700 font-medium px-4 py-2 hover:text-zinc-900 cursor-pointer text-lg">
                   Home
                 </div>
-                <div className="text-zinc-300 px-4 py-2 hover:text-zinc-200 cursor-pointer text-lg">
+                <div className="text-zinc-700 font-medium px-4 py-2 hover:text-zinc-900 cursor-pointer text-lg">
                   Support
                 </div>
                 <div
                   onClick={() => navigate("/signup")}
-                  className="text-zinc-300 px-4 py-2 bg-zinc-800 rounded-md hover:text-zinc-200 cursor-pointer text-lg"
+                  className="text-zinc-950 px-4 py-2 bg-zinc-200 rounded-md cursor-pointer text-lg"
                 >
                   Sign In →
                 </div>
