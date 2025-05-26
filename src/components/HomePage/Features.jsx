@@ -11,10 +11,10 @@ const Features = () => {
       </div>
       <div className="relative w-full bg-white px-6 pt-10 pb-8 mt-8 shadow-md sm:mx-auto max-w-5xl sm:rounded-lg sm:px-10">
         <div className="mx-auto px-5">
-          <div className="mx-auto grid max-w-4xl divide-y divide-neutral-400">
+          <div className="mx-auto grid max-w-4xl divide-y divide-neutral-300">
             <div className="py-5">
               <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-zinc-950 text-xl">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-zinc-800 text-xl">
                   <span> Can I search for jobs using ProHire?</span>
                   <span className="transition group-open:rotate-180">
                     <svg
@@ -41,7 +41,7 @@ const Features = () => {
             </div>
             <div className="py-5">
               <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-zinc-950 text-xl">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-zinc-800 text-xl">
                   <span>Is it both for Hiring manager and Job Seeker?</span>
                   <span className="transition group-open:rotate-180">
                     <svg
@@ -69,7 +69,7 @@ const Features = () => {
             </div>
             <div className="py-5">
               <details className="group">
-                <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-zinc-950 text-xl">
+                <summary className="flex cursor-pointer list-none items-center justify-between font-medium text-zinc-800 text-xl">
                   <span>
                     {" "}
                     Do i have to pay as a hiring manager or as a Job Seeker?

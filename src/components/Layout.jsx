@@ -44,7 +44,7 @@ const Layout = () => {
           </div>
         </div> */}
 
-        <header className="text-zinc-200 py-6 px-4 z-50">
+        <header className="text-zinc-200 py-4 px-4 z-50">
           {/*  */}
           <nav className="container mx-auto px-6">
             <div className="flex justify-between items-center">

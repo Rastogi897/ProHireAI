@@ -13,7 +13,7 @@ const Home = () => {
           className="text-zinc-950 z-50 mx-auto text-lg font-normal mb-16 px-6 py-2 rounded-3xl shadow-md shadow-zinc-300 bg-gradient-to-b from-zinc-300 to-zinc-200"
           // className=" text-lg font-normal mb-16 px-6 py-2 rounded-3xl shadow-md bg-gradient-to-r from-zinc-500 to-zinc-300 text-white focus:ring ring-black ring-opacity-10 gradient element-to-rotate"
         >
-          Powered with Hugging Face AI
+          Powered with Google Gemini
         </h3>
       </div>
       <h1 className="z-50 flex justify-center text-9xl font-medium font-display tracking-tight text-slate-900 sm:text-8xl">
