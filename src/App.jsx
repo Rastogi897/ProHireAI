@@ -4,8 +4,8 @@ import Home from "./components/HomePage/Home";
 import Layout from "./components/Layout";
 // import NoPage from "./components/NoPage";
 import UserProfileForm from "./components/UserProfileForm";
-import HireForm from "./components/HireForm";
-import ListUsers from "./components/ListUsers";
+// import HireForm from "./components/HireForm";
+// import ListUsers from "./components/ListUsers";
 import SignUp from "./components/SignIn/SignUp";
 
 const App = () => {
@@ -16,8 +16,8 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/userForm" element={<UserProfileForm />} />
-          <Route path="/hireForm" element={<HireForm />} />
-          <Route path="/listCandidates" element={<ListUsers />} />
+          {/* <Route path="/hireForm" element={<HireForm />} /> */}
+          {/* <Route path="/listCandidates" element={<ListUsers />} /> */}
         </Route>
         <Route path="/signUp" element={<SignUp />} />
       </Routes>

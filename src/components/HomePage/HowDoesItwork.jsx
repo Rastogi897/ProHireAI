@@ -1,75 +1,78 @@
+/* eslint-disable react/prop-types */
+// import React from 'react';
+import { Lightbulb, FileInput, BarChart2 } from "lucide-react"; // Importing relevant Lucide icons
+
 const HowDoesItwork = () => {
+  const HowItWorksStep = ({ icon: Icon, stepNumber, title, description }) => (
+    <div className="relative flex flex-col items-center text-center p-6 pt-6 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+      {/* Step Number */}
+      <div className="absolute text-7xl font-bold -top-4 left-4 z-0 select-none p-2 rounded-lg bg-zinc-100 shadow-md shadow-zinc-300">
+        <Icon className="text-blue-500 w-9 h-9" />
+      </div>
+      {/* Icon */}
+      {/* <div className="mb-4 p-3 bg-blue-50 rounded-lg">
+        <Icon className="text-blue-500 w-6 h-6" />
+      </div> */}
+      {/* Title */}
+      <h3 className="text-xl font-normal text-zinc-800 mb-2">{title}</h3>
+      {/* Description */}
+      <p className="text-zinc-500 text-md mt-4">{description}</p>
+    </div>
+  );
+
   return (
-    <section id="works" className="relative bg-zinc-100 py-32">
-      <div className="px-4 mx-auto max-w-7xl">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-5xl bg-gradient-to-b from-zinc-950 to-zinc-600 bg-clip-text text-transparent font-bold mx-auto">
+    <div className="mt-12 mb-12 bg-gray-50 flex flex-col items-center justify-center p-4">
+      {/* "How It Works" Section */}
+      <section className="w-full max-w-6xl px-4 py-12">
+        <div className="mb-16 text-center">
+          <h2 className="text-4xl font-normal text-gray-900">
             How does it work?
           </h2>
-          <p className="max-w-2xl mx-auto mt-4 text-zinc-700 leading-relaxed text-xl">
-            We match the right candidates based on the job profiles. <br />
-          </p>
-        </div>
-        <div className="relative mt-24">
-          <div className="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
-            <img
-              alt=""
-              loading="lazy"
-              width="1000"
-              height="500"
-              decoding="async"
-              data-nimg="1"
-              className="w-full"
-              //   style={{ color: "transparent" }}
-              style={{ filter: "brightness(0.2)" }}
-              src="https://cdn.rareblocks.xyz/collection/celebration/images/steps/2/curved-dotted-line.svg"
-            ></img>
-          </div>
-          <div className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12">
-            <div>
-              <div className="flex items-center justify-center w-16 h-16 mx-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-full shadow">
-                <span className="text-xl font-semibold text-white">1</span>
-              </div>
-              <h3 className="mt-6 text-2xl  text-zinc-950 font-semibold leading-tight md:mt-10">
-                Job Description
-              </h3>
-              <p className="mt-4 text-lg text-zinc-700">
-                Enter the job description to get started
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center w-16 h-16 mx-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-full shadow">
-                <span className="text-xl font-semibold text-white">2</span>
-              </div>
-              <h3 className="mt-6 text-2xl text-zinc-950 font-semibold leading-tight md:mt-10">
-                Sit back & Relax
-              </h3>
-              <p className="mt-4 text-lg text-zinc-700">
-                AI will analyze the description and find the best match
-              </p>
-            </div>
-            <div>
-              <div className="flex items-center justify-center w-16 h-16 mx-auto bg-gradient-to-r from-blue-600 to-blue-500 rounded-full shadow">
-                <span className="text-xl font-semibold text-white">3</span>
-              </div>
-              <h3 className="mt-6 text-2xl text-zinc-950 font-semibold leading-tight md:mt-10">
-                Finalize the candidate
-              </h3>
-              <p className="mt-4 text-zinc-700 text-lg">
-                Choose the best candidate based on your requirements
-              </p>
-            </div>
+          <div className="text-lg text-zinc-500 font-normal mt-2">
+            Let&apos;s understand how we make things simpler for you
           </div>
         </div>
-      </div>
-      <div
-        className="absolute inset-0 m-auto max-w-xs h-[357px] blur-[118px] sm:max-w-md md:max-w-lg"
-        style={{
-          background:
-            "radial-gradient(1.89deg, rgba(34, 78, 95, 0.4) -1000%, rgba(191, 227, 205, 0.26) 1500.74%, rgba(34, 140, 165, 0.41) 56.49%, rgba(28, 47, 99, 0.11) 1150.91%)",
-        }}
-      ></div>
-    </section>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 relative">
+          {/* Connector lines (hidden on small screens) */}
+          <div className="hidden lg:block absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-between px-16 pointer-events-none">
+            <div className="w-full h-0.5 bg-gradient-to-r from-zinc-200 to-zinc-200 absolute left-0 right-0 top-1/2 transform -translate-y-1/2"></div>
+          </div>
+
+          {/* Step 1 */}
+          <HowItWorksStep
+            icon={Lightbulb}
+            stepNumber={1}
+            title="Ideate Your Need"
+            description="Select the right tool from the basket based on your requirement and get started with ease."
+          />
+
+          {/* Step 2 */}
+          <HowItWorksStep
+            icon={FileInput}
+            stepNumber={2}
+            title="Upload Resume"
+            description="Upload your resume / Summary and let our AI tool do the heavy lifting for you."
+          />
+
+          {/* Step 3 */}
+          <HowItWorksStep
+            icon={BarChart2}
+            stepNumber={3}
+            title="Analyze & Optimize"
+            description="Evaluate your required results to be used in your job applications, interviews, & more."
+          />
+
+          {/* Step 4 */}
+          {/* <HowItWorksStep
+            icon={CheckCircle}
+            stepNumber={4}
+            title="Launch & Succeed"
+            description="Deploy your project confidently and achieve your objectives with robust support."
+          /> */}
+        </div>
+      </section>
+    </div>
   );
 };
 

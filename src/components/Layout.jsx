@@ -8,7 +8,7 @@ const Layout = () => {
 
   return (
     <>
-      <section className="flex flex-col min-h-screen overflow-hidden bg-gradient-to-b from-zinc-100 to-zinc-100">
+      <section className="flex flex-col min-h-screen overflow-hidden bg-gray-50">
         {/* <div className="relative z-10">
           <div className="absolute inset-x-0 top-96 -z-10 flex -translate-y-1/2 justify-center overflow-hidden [mask-image:radial-gradient(50%_45%_at_50%_55%,white,transparent)]">
             <svg
