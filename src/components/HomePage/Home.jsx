@@ -6,6 +6,7 @@ import Features from "./Features";
 
 const Home = () => {
   const navigate = useNavigate();
+  console.log("Testing change in Home component");
   return (
     <div className="pt-14 z-50 relative">
       <div className="flex justify-center">
