@@ -3,7 +3,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HowDoesItwork from "./HowDoesItwork";
 import Features from "./Features";
-import { Zap, Brain, ChevronsUp, Archive } from "lucide-react";
+import ToolsSection from "./ToolsSection";
+import Feedback from "./Feedback";
+import { Zap, Brain, Gauge, Archive } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -57,7 +59,7 @@ const Home = () => {
           </div>
           <div className="flex flex-col text-left">
             <span className="text-gray-800 text-md font-medium leading-tight">
-              6 AI Tools
+              AI Powered
             </span>
             <span className="text-gray-600 text-sm leading-tight">
               Automates your process
@@ -69,7 +71,7 @@ const Home = () => {
           style={{ maxWidth: "fit-content" }}
         >
           <div className="p-2 mr-4 bg-blue-50 rounded-lg flex-shrink-0">
-            <ChevronsUp className="text-blue-500 w-6 h-6 " />
+            <Gauge className="text-blue-500 w-6 h-6 " />
           </div>
           <div className="flex flex-col text-left">
             <span className="text-gray-800 text-md font-medium leading-tight">
@@ -80,6 +82,7 @@ const Home = () => {
             </span>
           </div>
         </div>
+
         {/* <div
           className="z-50 font-medium text-lg inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white shadow-lg transition-all rounded-md sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 cursor-pointer hover:shadow-xl hover:shadow-blue-200"
           // onClick={() => navigate("/hireForm")}
@@ -131,8 +134,9 @@ const Home = () => {
           View Product Basket
         </button>
       </div>
+      <ToolsSection />
       <HowDoesItwork />
-      <Features />
+      <Feedback />
     </div>
   );
 };
