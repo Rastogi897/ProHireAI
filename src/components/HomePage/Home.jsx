@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HowDoesItwork from "./HowDoesItwork";
 import Features from "./Features";
@@ -10,6 +10,11 @@ import { Zap, Brain, Gauge, Archive } from "lucide-react";
 const Home = () => {
   const navigate = useNavigate();
   console.log("Testing change in Home component");
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // Reset scroll position on mount
+  }, []);
+
   return (
     <div className="pt-14 z-50 relative">
       <div className="flex justify-center">
@@ -82,49 +87,7 @@ const Home = () => {
             </span>
           </div>
         </div>
-
-        {/* <div
-          className="z-50 font-medium text-lg inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white shadow-lg transition-all rounded-md sm:w-auto bg-gradient-to-r from-blue-600 to-blue-500 cursor-pointer hover:shadow-xl hover:shadow-blue-200"
-          // onClick={() => navigate("/hireForm")}
-        >
-          Hire Professionals
-        </div>
-
-        <div
-          className="z-50 font-medium text-lg inline-block w-auto text-center min-w-[200px] px-6 py-4 text-white shadow-lg transition-all bg-gradient-to-r from-zinc-700 to-zinc-600 rounded-md sm:w-auto cursor-pointer hover:shadow-xl hover:shadow-zinc-300"
-          // onClick={() => navigate("/userForm")}
-        >
-          Create User Profile
-        </div> */}
       </div>
-
-      {/* <div className="max-w-md mx-auto rounded-md">
-        <div className="flex justify-center mt-20 pt-8">
-          <select
-            onChange={(e) => setRedirect(e.target.value)}
-            defaultValue="apply"
-            className="bg-zinc-950 text-gray-100 rounded-md py-2 px-6 focus:outline-none"
-          >
-            <option value="apply">Apply for Job</option>
-            <option value="hire">Hire Professionals</option>
-            <option value="admin">Site Admin</option>
-          </select>
-          <button
-            className="ml-4 bg-blue-600 text-gray-100 rounded-md py-2 px-6 hover:bg-blue-700"
-            onClick={handleRedirect}
-          >
-            Get Started
-          </button>
-        </div>
-        <div className="text-center text-sm mt-4 pb-8">
-          {redirect === "apply" &&
-            "Post your skills, and let the world reach out to you!"}
-          {redirect === "hire" &&
-            "Find the perfect match for your job profile with AI"}
-          {redirect === "admin" &&
-            "Check all the posted user profiles. Access Required"}
-        </div>
-      </div> */}
       <div className="flex justify-center items-center mt-4">
         <button
           className="flex z-50 font-light text-base w-auto justify-center items-center text-center min-w-[200px] px-4 py-2 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300"

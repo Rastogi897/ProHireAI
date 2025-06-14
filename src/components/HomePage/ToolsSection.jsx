@@ -6,7 +6,7 @@ import {
   FileCheck2,
   AtSign,
 } from "lucide-react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ToolsSection = () => {
   const TwoColumnFeatureItem = ({
@@ -16,7 +16,9 @@ const ToolsSection = () => {
     description,
     redirectTo,
   }) => {
+    const navigate = useNavigate();
     const handleRedirect = () => {
+      navigate(redirectTo);
       console.log(`Redirecting to: ${redirectTo}`);
     };
 
@@ -84,7 +86,7 @@ const ToolsSection = () => {
             icon={FileCheck2}
             title="Check Resume Fit"
             description="Get insights on how well your resume fits a job description, and suggestions for improvement."
-            redirectTo="/custom-dashboards"
+            redirectTo="/OptmizeResume"
           />
           {/* <TwoColumnFeatureItem
             icon={ArrowRight}

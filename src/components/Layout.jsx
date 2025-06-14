@@ -106,13 +106,17 @@ const Layout = () => {
 
         <Outlet />
 
-        <footer className="w-full bg-gray-50 border-t border-gray-100 py-8 px-4 mt-12">
+        <footer className="w-full bg-gradient-to-b from-zinc-100 to-zinc-200  border-t border-gray-100 py-8 px-4 mt-12">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Left Side: Site Name */}
             <div className="text-center md:text-left">
-              <span className="text-gray-800 text-2xl font-bold">
-                YourSiteName
-              </span>
+              <div
+                className="text-xl font-normal cursor-pointer flex justify-center items-center bg-gradient-to-b from-zinc-950 to-zinc-800 bg-clip-text text-transparent"
+                onClick={redirectHome}
+              >
+                <ChevronsUp className="w-6 h-6 mr-2 text-zinc-700" />
+                JobLift
+              </div>
             </div>
 
             {/* Right Side: Navigation Links */}
@@ -127,13 +131,13 @@ const Layout = () => {
                 href="#"
                 className="hover:text-blue-600 transition-colors duration-200"
               >
-                About Us
+                Tools
               </a>
               <a
                 href="#"
                 className="hover:text-blue-600 transition-colors duration-200"
               >
-                Contact
+                Contact Us
               </a>
               <a
                 href="#"
