@@ -1,0 +1,55 @@
+🧩 About the Role
+We’re looking for a passionate and detail-oriented Frontend Developer with at least 1 year of professional experience to join our growing product engineering team. You’ll work closely with designers, backend engineers, and product managers to build clean, scalable, and user-centric web interfaces.
+
+🎯 Key Responsibilities
+Develop and maintain responsive user interfaces using React.js (or similar frameworks like Vue/Angular)
+
+Translate UI/UX design wireframes into high-quality, reusable code
+
+Integrate RESTful APIs and work with backend developers to deliver end-to-end features
+
+Optimize components for performance and cross-browser compatibility
+
+Write clean, maintainable, and testable code
+
+Participate in code reviews, team meetings, and agile sprint planning
+
+Stay updated with the latest frontend trends, frameworks, and best practices
+
+🛠 Must-Have Skills
+1+ years of experience in frontend development
+
+Proficiency in JavaScript, HTML5, and CSS3
+
+Solid hands-on experience with React.js (or Vue/Angular)
+
+Familiarity with version control systems like Git
+
+Understanding of responsive design and cross-browser compatibility
+
+Basic knowledge of REST APIs and asynchronous request handling
+
+Experience using tools like Webpack, NPM, or Vite
+
+💡 Nice-to-Have Skills
+Familiarity with TypeScript
+
+Experience with Redux, Context API, or any state management library
+
+Exposure to unit testing (Jest, React Testing Library)
+
+Knowledge of CI/CD pipelines and frontend deployment
+
+Basic understanding of accessibility (WCAG, ARIA)
+
+🙌 What You’ll Get
+Competitive salary and performance bonuses
+
+Flexible work hours and remote-first culture
+
+Learning budget for courses, books, and tech events
+
+Opportunity to work on impactful products with a talented team
+
+Clear growth path and mentorship
+

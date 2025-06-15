@@ -187,7 +187,7 @@ const AnalysisModal = ({ analysisResult, isLoading, onClose, error }) => {
               {/* Suggested Improvements */}
               <div>
                 <h3 className="text-base font-semibold text-zinc-800 mb-4">
-                  Improvement Summary
+                  Actionable Items
                 </h3>
                 <div className="space-y-0">
                   {analysisResult.suggestions.map((suggestion, index) => (

@@ -2,18 +2,9 @@
 import { useState, useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import pdfToText from "react-pdftotext";
-import {
-  Loader2,
-  UploadCloud,
-  FileText,
-  // CheckCircle,
-  Wand2,
-  // Brain,
-} from "lucide-react";
+import { Loader2, UploadCloud, FileText, Wand2 } from "lucide-react";
 import AnalysisModal from "./AnalysisModal";
-
-// Note: pdf.js is expected to be loaded globally in the environment.
-// We will access it via window.pdfjsLib.
+import { generatePrompt } from "./prompt";
 
 const App = () => {
   const [resumeText, setResumeText] = useState("");
@@ -74,38 +65,7 @@ const App = () => {
     setError("");
     setIsModalOpen(true);
 
-    const prompt = `
-            Analyze the following resume and job description.
-            
-            **Resume:**
-            ${resumeText}
-            
-            **Job Description:**
-            ${jobDescription}
-            
-            Based on the analysis, provide:
-            1. A "before" percentage match score representing how well the current resume fits the job description. The score should be between 0 and 100.
-            2. A list of specific, actionable suggestions to improve the resume. Format these as a list of points in short and execty where the improvements are needed.
-            3. A projected "after" percentage match score if all suggestions are implemented. This score should be higher than the 'before' score and between 0 and 100.
-            4. A "detailedChanges" section that contains a list of specific changes where each item includes:
-              - "from": a short snippet (up to 2-3 lines) from the resume that needs improvement, EXCEPT THE NAME AND PERSONLA DETAILS.,
-              - "to": the improved version of that snippet that better aligns with the job description.
-              
-            Format the detailedChanges like this:
-            [
-              {
-                "from": "Experienced in software development.",
-                "to": "Experienced in developing scalable web applications using React and Node.js, aligning with job requirements."
-              },
-              {
-                "from": "Worked at ABC Corp.",
-                "to": "Led front-end development at ABC Corp, optimizing UI components for a fintech platform."
-              }
-            ]
-
-            Ensure this section is not empty. If no specific edits are needed, explain why.
-            `;
-
+    const prompt = generatePrompt(resumeText, jobDescription);
     try {
       let chatHistory = [];
       chatHistory.push({ role: "user", parts: [{ text: prompt }] });
@@ -160,7 +120,7 @@ const App = () => {
         },
       };
 
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY; // Leave blank
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
       const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
       const response = await fetch(apiUrl, {
@@ -235,8 +195,8 @@ const App = () => {
             >
               <input {...getInputProps()} className="sr-only" />
               <div className="text-center">
-                <UploadCloud className="mx-auto h-10 w-10 text-blue-500" />
-                <p className="mt-2 text-base text-gray-700">
+                <UploadCloud className="mx-auto h-8 w-8 text-blue-500" />
+                <p className="mt-2 text-sm text-gray-700">
                   {isDragActive
                     ? "Drop the file here..."
                     : "Drag & drop or click to upload"}
@@ -264,7 +224,7 @@ const App = () => {
             <textarea
               id="job-description"
               rows="8"
-              className="mt-1 block w-full rounded-md border border-gray-200 bg-zinc-50 shadow-sm focus:ring-0 text-base p-4"
+              className="mt-1 block w-full rounded-md border border-gray-200 bg-zinc-50 shadow-sm focus:ring-0 text-sm p-4"
               placeholder="The full job description goes here..."
               value={jobDescription}
               onChange={(e) => setJobDescription(e.target.value)}
@@ -283,7 +243,7 @@ const App = () => {
             <button
               onClick={handleAnalyze}
               disabled={isLoading || !resumeText || !jobDescription}
-              className="flex z-50 font-normal text-base w-auto justify-center items-center text-center min-w-[200px] px-4 py-2 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+              className="flex z-50 font-normal text-sm w-auto justify-center items-center text-center px-4 py-2 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <>
