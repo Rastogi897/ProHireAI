@@ -167,7 +167,7 @@ const App = () => {
   };
 
   return (
-    <div className="mt-8 bg-gray-100 font-sans text-gray-800 flex flex-col justify-center items-center p-4">
+    <div className="mt-8 mb-8 bg-gray-50 font-sans text-gray-800 flex flex-col justify-center items-center p-4">
       <div className="w-full max-w-3xl">
         <header className="text-center mb-8">
           {/* <Wand2 className="h-12 w-12 text-indigo-600 mx-auto mb-2" /> */}

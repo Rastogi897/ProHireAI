@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { ChevronsUp } from "lucide-react";
+import { ChevronsUp, ChevronDown } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
 const Layout = () => {
@@ -39,11 +39,16 @@ const Layout = () => {
   }, [showToolsDropdown]);
 
   return (
-    <>
-      <section className="flex flex-col min-h-screen bg-gray-100">
-        <header className="text-zinc-200 py-4 px-4 z-50">
+    <div className="relative">
+      {/* Fixed background */}
+      {/* <div className="fixed inset-0 -z-10 h-full w-full bg-gray-50 bg-[radial-gradient(#e0e0e0_1px,transparent_2px)] [background-size:16px_16px]"></div> */}
+      {/* <div className="fixed inset-0 -z-10 w-full h-full bg-gray-50 [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> */}
+      {/* <div className="fixed top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
+      {/* <div className="fixed inset-0 -z-10 h-full w-full bg-gray-50 bg-[linear-gradient(to_right,#e6e6e6_1px,transparent_1px),linear-gradient(to_bottom,#e6e6e6_1px,transparent_1px)] bg-[size:6rem_4rem]"></div> */}
+      <section className="flex flex-col min-h-screen bg-gray-50">
+        <header className="sticky top-0 z-10 bg-gray-50 backdrop-filter backdrop-blur-sm bg-opacity-30 border-b border-gray-200">
           {/*  */}
-          <nav className="container mx-auto px-6">
+          <nav className="container max-w-6xl mx-auto px-4 py-3">
             <div className="flex justify-between items-center">
               <div
                 className="text-xl font-normal cursor-pointer flex justify-center items-center bg-gradient-to-b from-zinc-950 to-zinc-800 bg-clip-text text-transparent"
@@ -53,15 +58,15 @@ const Layout = () => {
                 JobLift
               </div>
               <div className="flex justify-center space-x-6">
-                <div className="text-zinc-700 font-normal px-4 py-2 hover:text-zinc-900 cursor-pointer text-lg">
+                <div className="text-zinc-800 font-normal px-4 py-2 hover:text-blue-700 transition-all duration-100 cursor-pointer text-base ">
                   Home
                 </div>
                 <div className="relative" ref={toolsDropdownRef}>
                   <button
-                    className="flex items-center justify-center px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg shadow-sm hover:bg-gray-300 transition-colors duration-200"
+                    className="flex items-center justify-center px-4 py-2 text-zinc-800 font-normal rounded-lg hover:bg-gray-200 transition-colors duration-200"
                     onClick={() => setShowToolsDropdown(!showToolsDropdown)}
                   >
-                    <ChevronsUp className="w-5 h-5 mr-2" /> All Tools
+                    <ChevronDown className="w-5 h-5 mr-2" /> Product Basket
                   </button>
                   {showToolsDropdown && (
                     <div className="absolute top-full mt-2 left-1/2 -translate-x-1/2 transform w-60 bg-white border border-gray-200 rounded-lg shadow-xl">
@@ -103,10 +108,9 @@ const Layout = () => {
             </div>
           </nav>
         </header>
-
         <Outlet />
 
-        <footer className="w-full bg-gradient-to-b from-zinc-100 to-zinc-200  border-t border-gray-100 py-8 px-4 mt-12">
+        <footer className="w-full bg-gradient-to-b from-gray-50 to-zinc-100 border-t border-gray-100 py-8 px-4 mt-12">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Left Side: Site Name */}
             <div className="text-center md:text-left">
@@ -154,11 +158,11 @@ const Layout = () => {
             </nav>
           </div>
           <div className="mt-8 text-center text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} YourSiteName. All rights reserved.
+            &copy; {new Date().getFullYear()} JobLift. All rights reserved.
           </div>
         </footer>
       </section>
-    </>
+    </div>
   );
 };
 

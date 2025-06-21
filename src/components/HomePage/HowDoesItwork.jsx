@@ -12,12 +12,12 @@ const HowDoesItwork = () => {
         <Icon className="text-blue-500 w-6 h-6" />
       </div> */}
       <h3 className="text-xl font-normal text-zinc-800 mb-2">{title}</h3>
-      <p className="text-zinc-500 text-md mt-4">{description}</p>
+      <p className="text-zinc-500 text-base mt-4">{description}</p>
     </div>
   );
 
   return (
-    <div className="mt-12 mb-8 bg-gray-100 flex flex-col items-center justify-center p-4">
+    <div className="mt-12 mb-8 bg-gray-50 flex flex-col items-center justify-center p-4">
       {/* "How It Works" Section */}
       <section className="w-full max-w-6xl px-4 py-12">
         <div className="mb-16 text-center">

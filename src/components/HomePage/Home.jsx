@@ -16,9 +16,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="pt-14 z-50 relative">
+    <div className="pt-14 relative">
       <div className="flex justify-center">
-        <h3 className="flex items-center text-zinc-950 z-50 mx-auto text-md font-normal mb-16 px-8 py-1.5 rounded-xl shadow-md bg-white">
+        <h3 className="flex items-center text-zinc-950 mx-auto text-md font-normal mb-16 px-8 py-1.5 rounded-xl shadow-md bg-white">
           <Zap className="text-orange-600 inline-block w-4 h-4 ml-2 mr-2" />{" "}
           {/* Added ml-1 and mr-1 for spacing */}
           Powered with Google Gemini
@@ -89,12 +89,21 @@ const Home = () => {
         </div>
       </div>
       <div className="flex justify-center items-center mt-4">
-        <button
-          className="flex z-50 font-light text-base w-auto justify-center items-center text-center min-w-[200px] px-4 py-2 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300"
+        {/* <button
+          className="flex font-light text-base w-auto justify-center items-center text-center min-w-[200px] px-4 py-2 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300"
           onClick={() => navigate("/hireForm")}
         >
           <Archive className="text-white w-4 h-4 mr-3" />
           View Product Basket
+        </button> */}
+        <button className="group relative flex font-light text-base w-auto justify-center items-center text-center min-w-[200px] px-4 py-2 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300">
+          <span className="relative z-10 flex items-center">
+            <Archive className="text-white w-4 h-4 mr-3" />
+            View Product Basket
+          </span>
+          <span className="absolute inset-0 overflow-hidden rounded-md">
+            <span className="absolute left-0 aspect-square w-full origin-center -translate-x-full rounded-full bg-gradient-to-r from-blue-500 to-blue-600 transition-all duration-500 group-hover:-translate-x-0 group-hover:scale-150"></span>
+          </span>
         </button>
       </div>
       <ToolsSection />

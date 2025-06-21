@@ -48,7 +48,7 @@ const ToolsSection = () => {
     );
   };
   return (
-    <div className="mt-12 mb-12 bg-gray-100 flex flex-col items-center justify-center p-4">
+    <div className="mt-12 mb-12 bg-transparent flex flex-col items-center justify-center p-4">
       {/* "How It Works" Section */}
       <section className="w-full max-w-6xl px-4 py-12">
         <div className="mb-16 text-center">

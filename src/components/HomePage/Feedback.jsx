@@ -3,7 +3,7 @@ import { Send } from "lucide-react";
 
 const Feedback = () => {
   return (
-    <div className="bg-gray-100 flex flex-col items-center justify-center p-4">
+    <div className="bg-gray-50 flex flex-col items-center justify-center p-4">
       <section className="w-full max-w-6xl px-4 py-12">
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-16 p-8 bg-white rounded-xl shadow-lg shadow-zinc-200 border border-gray-100">
           {/* Left Side: Heading */}
@@ -14,7 +14,7 @@ const Feedback = () => {
                 Feedback!
               </span>
             </h2>
-            <div className="text-lg text-zinc-500 font-normal mt-2">
+            <div className="text-base text-zinc-500 font-normal mt-2">
               Thinking of ways to improve our product?
             </div>
           </div>
@@ -30,11 +30,11 @@ const Feedback = () => {
               //   onChange={(e) => setFeedback(e.target.value)}
             ></textarea>
             <button
-              className="flex z-50 font-light text-base w-auto justify-center items-center text-center min-w-[200px] px-4 py-2 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300"
+              className="flex z-50 font-light text-base w-auto justify-center items-center text-center min-w-[170px] px-4 py-1 text-white transition-all rounded-lg sm:w-auto bg-gradient-to-r from-zinc-800 to-zinc-700 cursor-pointer hover:shadow-lg hover:shadow-zinc-300 shadow-md shadow-zinc-300"
 
               //   onClick={handleSendFeedback}
             >
-              <Send className="w-5 h-5 mr-2" /> Send Feedback
+              <Send className="w-4 h-4 mr-2" /> Share to us!
             </button>
           </div>
         </div>
