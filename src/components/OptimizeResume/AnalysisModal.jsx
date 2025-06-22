@@ -60,7 +60,6 @@ const AnalysisModal = ({ analysisResult, isLoading, onClose, error }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-[80vw] h-[80vh] flex flex-col">
-        {/* Modal Header */}
         <div className="flex justify-between items-center p-4 pl-6 border-b border-gray-200">
           <h2 className="flex justify-center items-center text-xl font-semibold bg-gradient-to-b from-zinc-900 to-zinc-600 text-transparent bg-clip-text">
             Review Analysis
@@ -97,7 +96,6 @@ const AnalysisModal = ({ analysisResult, isLoading, onClose, error }) => {
 
           {analysisResult && !error && (
             <div className="space-y-8">
-              {/* Match Score Analysis */}
               <div>
                 <h3 className="text-base font-semibold text-zinc-800 mb-1">
                   Match Score Analysis
@@ -117,40 +115,25 @@ const AnalysisModal = ({ analysisResult, isLoading, onClose, error }) => {
                       <MatchCircle
                         percentage={analysisResult.beforeMatchPercentage}
                       />
-                      {/* Contextual explanation */}
                       <p className="text-sm text-zinc-500 mt-1">
                         Your current resume alignment with the job requirement.
                       </p>
                     </div>
 
-                    {/* Potential Match Section */}
-                    {/* Distinct background and border color for "potential" to highlight importance */}
-                    {/* Ensured full width on small screens, half width on sm and up */}
                     <div className="w-full sm:w-1/2 p-4 bg-gradient-to-br from-blue-50 to-blue-50 rounded-lg shadow-sm border border-indigo-200 flex flex-col items-center text-center">
-                      {/* Heading for potential match with an icon */}
                       <h4 className="text-md font-semibold text-blue-600 mb-3 flex items-center gap-2">
                         Potential Match
                       </h4>
                       <MatchCircle
                         percentage={analysisResult.afterMatchPercentage}
                       />
-                      {/* Contextual explanation */}
                       <p className="text-sm text-blue-600 mt-1">
                         Achievable match score after suggested improvements.
                       </p>
                     </div>
                   </div>
-
-                  {/* Actionable Insight / Next Steps */}
-                  {/* Added a prominent call to action/tip for the user */}
                 </div>
               </div>
-              {/* <div className="w-full p-4 bg-zinc-100 rounded-lg text-center text-blue-800 mt-6">
-                <p className="text-sm sm:text-base font-medium">
-                  💡 Review the detailed analysis below to identify areas for
-                  improvement and boost your score!
-                </p>
-              </div> */}
 
               {/* Detailed Changes */}
               {analysisResult.detailedChanges &&

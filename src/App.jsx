@@ -8,6 +8,7 @@ import UserProfileForm from "./components/UserProfileForm";
 // import ListUsers from "./components/ListUsers";
 import SignUp from "./components/SignIn/SignUp";
 import OptimizeResumeMain from "./components/OptimizeResume/OptimizeResumeMain";
+import CoverLetterMain from "./components/GenerateCoverLetter/CoverLetterMain";
 
 const App = () => {
   console.log(import.meta.env.VITE_TEST);
@@ -18,7 +19,8 @@ const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="/userForm" element={<UserProfileForm />} />
-          <Route path="/OptmizeResume" element={<OptimizeResumeMain />} />
+          <Route path="/optimize-resume" element={<OptimizeResumeMain />} />
+          <Route path="/generate-cover-letter" element={<CoverLetterMain />} />
         </Route>
         <Route path="/signUp" element={<SignUp />} />
       </Routes>

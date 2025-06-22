@@ -72,7 +72,7 @@ const ToolsSection = () => {
             icon={LetterText}
             title="Generate Cover Letter"
             description="Generate personalized cover letters based on your resume."
-            redirectTo="/workflow-automation"
+            redirectTo="/generate-cover-letter"
           />
           <TwoColumnFeatureItem
             index="3"
@@ -84,9 +84,9 @@ const ToolsSection = () => {
           <TwoColumnFeatureItem
             index="4"
             icon={FileCheck2}
-            title="Check Resume Fit"
+            title="Optimize Resume"
             description="Get insights on how well your resume fits a job description, and suggestions for improvement."
-            redirectTo="/OptmizeResume"
+            redirectTo="/optimize-resume"
           />
           {/* <TwoColumnFeatureItem
             icon={ArrowRight}
