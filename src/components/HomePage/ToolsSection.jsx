@@ -40,7 +40,6 @@ const ToolsSection = () => {
         <p className="text-zinc-500 text-left text-base mb-4 group-hover:text-zinc-600">
           {description}
         </p>
-        {/* Call to action - arrow appears on hover */}
         <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-1 transition-all duration-300">
           <ArrowRight className="w-5 h-5 text-blue-600 group-hover:text-blue-600" />
         </div>
@@ -48,8 +47,7 @@ const ToolsSection = () => {
     );
   };
   return (
-    <div className="mt-12 mb-12 bg-transparent flex flex-col items-center justify-center p-4">
-      {/* "How It Works" Section */}
+    <div id="tools-section" className="mt-12 mb-12 bg-transparent flex flex-col items-center justify-center p-4">
       <section className="w-full max-w-6xl px-4 py-12">
         <div className="mb-16 text-center">
           <h2 className="text-4xl font-normal text-gray-900">
@@ -62,44 +60,34 @@ const ToolsSection = () => {
         <div className="grid grid-cols-2 bg-white rounded-xl shadow-lg shadow-zinc-200">
           <TwoColumnFeatureItem
             index="1"
-            icon={FileText}
-            title="Summarize Resume"
-            description="Generate concise techinical summaries of your resume."
-            redirectTo="/content-creator"
-          />
-          <TwoColumnFeatureItem
-            index="2"
-            icon={LetterText}
-            title="Generate Cover Letter"
-            description="Generate personalized cover letters based on your resume."
-            redirectTo="/generate-cover-letter"
-          />
-          <TwoColumnFeatureItem
-            index="3"
-            icon={AtSign}
-            title="Cold Emails"
-            description="Get personalized cold emails for job applications based on your profile and tareget company."
-            redirectTo="/predictive-insights"
-          />
-          <TwoColumnFeatureItem
-            index="4"
             icon={FileCheck2}
             title="Optimize Resume"
             description="Get insights on how well your resume fits a job description, and suggestions for improvement."
             redirectTo="/optimize-resume"
           />
-          {/* <TwoColumnFeatureItem
-            icon={ArrowRight}
-            title="Customer Support AI"
-            description="Enhance customer satisfaction."
-            redirectTo="/customer-support-ai"
+          <TwoColumnFeatureItem
+            index="2"
+            icon={LetterText}
+            title="Generate Cover Letter"
+            description="Generate personalized cover letters based on your resume and Job Description. Edit and download them in PDF format"
+            redirectTo="/generate-cover-letter"
           />
           <TwoColumnFeatureItem
-            icon={ArrowRight}
-            title="Resource Management"
-            description="Allocate resources efficiently."
-            redirectTo="/resource-optimization"
-          /> */}
+            index="3"
+            icon={FileText}
+            title="Coming soon"
+          // title="Summarize Resume"
+          // description="Generate concise techinical summaries of your resume."
+          // redirectTo="/content-creator"
+          />
+          <TwoColumnFeatureItem
+            index="4"
+            icon={AtSign}
+            title="Coming soon"
+          // description="Get personalized cold emails for job applications based on your profile and tareget company."
+          // redirectTo="/predictive-insights"
+          />
+
         </div>
       </section>
     </div>

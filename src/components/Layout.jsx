@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-import { ChevronsUp, ChevronDown, FileCheck2 } from "lucide-react";
+import { ChevronsUp, ChevronDown, FileCheck2, LetterText } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 
 const Layout = () => {
@@ -59,9 +59,9 @@ const Layout = () => {
                 JobLift
               </div>
               <div className="flex justify-center space-x-6">
-                <div className="text-zinc-800 font-normal px-4 py-2 hover:text-blue-700 transition-all duration-100 cursor-pointer text-base ">
+                {/* <div className="text-zinc-800 font-normal px-4 py-2 hover:text-blue-700 transition-all duration-100 cursor-pointer text-base ">
                   Home
-                </div>
+                </div> */}
                 <div className="relative" ref={toolsDropdownRef}>
                   <button
                     className="flex items-center justify-center px-4 py-2 text-zinc-800 font-normal rounded-lg hover:bg-gray-100 hover:text-blue-700 transition-colors duration-200"
@@ -83,27 +83,25 @@ const Layout = () => {
                         </li>
                         <li
                           className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-700 hover:text-blue-700 transition-colors duration-150"
+                          onClick={() => {
+                            navigate("/generate-cover-letter");
+                            setShowToolsDropdown(false);
+                          }}
                         // onClick={() => handleToolClick('Workflow Automation', '/workflow-automation')}
                         >
-                          <ChevronsUp className="w-5 h-5" /> Something
+                          <LetterText className="w-5 h-5" /> Generate Cover Letter
                         </li>
-                        <li
+                        {/* <li
                           className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-700 hover:text-blue-700 transition-colors duration-150"
-                        // onClick={() => handleToolClick('Predictive Insights', '/predictive-insights')}
+                        >
+                          <ChevronsUp className="w-5 h-5" /> More coming soon...
+                        </li> */}
+                        {/* <li
+                          className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-700 hover:text-blue-700 transition-colors duration-150"
+                        
                         >
                           <ChevronsUp className="w-5 h-5" /> Something
-                        </li>
-                        <li
-                          className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-700 hover:text-blue-700 transition-colors duration-150"
-                        // onClick={() =>
-                        //   handleToolClick(
-                        //     "Data Dashboards",
-                        //     "/custom-dashboards"
-                        //   )
-                        // }
-                        >
-                          <ChevronsUp className="w-5 h-5" /> Something
-                        </li>
+                        </li> */}
                       </ul>
                     </div>
                   )}
