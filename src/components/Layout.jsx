@@ -46,7 +46,7 @@ const Layout = () => {
       {/* <div className="fixed inset-0 -z-10 w-full h-full bg-gray-50 [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> */}
       {/* <div className="fixed top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> */}
       {/* <div className="fixed inset-0 -z-10 h-full w-full bg-gray-50 bg-[linear-gradient(to_right,#e6e6e6_1px,transparent_1px),linear-gradient(to_bottom,#e6e6e6_1px,transparent_1px)] bg-[size:6rem_4rem]"></div> */}
-      <section className="flex flex-col min-h-screen bg-gray-50">
+      <section className="flex flex-col min-h-screen bg-gray-100">
         <header className="sticky top-0 z-10 shadow-sm backdrop-filter backdrop-blur-sm bg-opacity-30">
           {/*  */}
           <nav className="container max-w-6xl mx-auto px-4 py-3">
@@ -83,24 +83,24 @@ const Layout = () => {
                         </li>
                         <li
                           className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-700 hover:text-blue-700 transition-colors duration-150"
-                          // onClick={() => handleToolClick('Workflow Automation', '/workflow-automation')}
+                        // onClick={() => handleToolClick('Workflow Automation', '/workflow-automation')}
                         >
                           <ChevronsUp className="w-5 h-5" /> Something
                         </li>
                         <li
                           className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-700 hover:text-blue-700 transition-colors duration-150"
-                          // onClick={() => handleToolClick('Predictive Insights', '/predictive-insights')}
+                        // onClick={() => handleToolClick('Predictive Insights', '/predictive-insights')}
                         >
                           <ChevronsUp className="w-5 h-5" /> Something
                         </li>
                         <li
                           className="flex items-center gap-3 px-4 py-2 hover:bg-blue-50 cursor-pointer text-gray-700 hover:text-blue-700 transition-colors duration-150"
-                          // onClick={() =>
-                          //   handleToolClick(
-                          //     "Data Dashboards",
-                          //     "/custom-dashboards"
-                          //   )
-                          // }
+                        // onClick={() =>
+                        //   handleToolClick(
+                        //     "Data Dashboards",
+                        //     "/custom-dashboards"
+                        //   )
+                        // }
                         >
                           <ChevronsUp className="w-5 h-5" /> Something
                         </li>

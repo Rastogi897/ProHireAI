@@ -18,7 +18,7 @@ const Home = () => {
   return (
     <div className="pt-14 relative">
       <div className="flex justify-center">
-        <h3 className="flex items-center text-zinc-950 mx-auto text-md font-normal mb-16 px-8 py-1.5 rounded-xl shadow-md bg-white">
+        <h3 className="flex items-center text-zinc-950 mx-auto text-md font-normal mb-12 px-8 py-1.5 rounded-xl shadow-md bg-white">
           <Zap className="text-orange-600 inline-block w-4 h-4 ml-2 mr-2" />{" "}
           {/* Added ml-1 and mr-1 for spacing */}
           Powered with Google Gemini
@@ -48,10 +48,10 @@ const Home = () => {
         </span>
       </h4>
 
-      <p className="flex justify-center font-normal mt-8 text-lg max-w-lg text-center mx-auto text-zinc-500">
+      {/* <p className="flex justify-center font-normal mt-8 text-lg max-w-lg text-center mx-auto text-zinc-500">
         Provides the basket of tools which helps making your job application
         stand out from the crowd.
-      </p>
+      </p> */}
       <p className="text-center pt-1 text-md font-semibold"></p>
 
       <div className="z-50 flex items-center justify-center gap-5 mt-20 mb-8 flex-row w-full">

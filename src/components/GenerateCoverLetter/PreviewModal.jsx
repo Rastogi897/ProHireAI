@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 import { Loader2, X, Download, FileText, Copy } from "lucide-react";
-import { useRef } from "react";
+
+import { useRef, useState } from "react";
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+
 
 const PreviewModal = ({
   coverLetterSections,
@@ -14,12 +18,82 @@ const PreviewModal = ({
   const introductionRef = useRef(null);
   const bodyRef = useRef(null);
   const conclusionRef = useRef(null);
+  const [copied, setCopied] = useState(false);
+
 
   const updateSectionContent = (section, ref) => {
     setCoverLetterSections((prev) => ({
       ...prev,
       [section]: ref.current.innerHTML,
     }));
+  };
+
+  const handleDownloadPdf = async () => {
+    if (!coverLetterPreviewRef.current) return;
+    const input = coverLetterPreviewRef.current;
+
+    const canvas = await html2canvas(input, {
+      scale: 2,
+      backgroundColor: '#fff',
+      useCORS: true,
+      windowWidth: input.scrollWidth,
+    });
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF({
+      orientation: 'p',
+      unit: 'pt',
+      format: 'a4',
+    });
+
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+    const padding = 40; // 40pt padding
+    const imgWidth = pageWidth - 2 * padding;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    let y = padding;
+    if (imgHeight + 2 * padding > pageHeight) {
+      let remainingHeight = imgHeight;
+      let position = padding;
+      const pageImgHeight = pageHeight - 2 * padding;
+      while (remainingHeight > 0) {
+        pdf.addImage(
+          imgData,
+          'PNG',
+          padding,
+          position,
+          imgWidth,
+          pageImgHeight,
+        );
+        remainingHeight -= pageImgHeight;
+        if (remainingHeight > 0) {
+          pdf.addPage();
+          position = padding;
+        }
+      }
+    } else {
+      pdf.addImage(imgData, 'PNG', padding, y, imgWidth, imgHeight);
+    }
+    pdf.save('CoverLetter.pdf');
+  };
+
+  const handleCopyToClipboard = () => {
+    if (!coverLetterSections) return;
+    const stripHtml = (html) => {
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html || '';
+      return tmp.textContent || tmp.innerText || '';
+    };
+    const text = [
+      name ? name + '\n' : '',
+      stripHtml(coverLetterSections.introduction),
+      '',
+      stripHtml(coverLetterSections.body),
+      '',
+      stripHtml(coverLetterSections.conclusion),
+    ].join('\n');
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 5000);
   };
 
   if (!coverLetterSections && !isLoading) return null;
@@ -53,26 +127,20 @@ const PreviewModal = ({
             </div>
             <div className="gap-4 flex items-center">
               <button
-                //   onClick={handleDownloadPdf}
-                //   disabled={!coverLetterSections || isLoading || !libsLoaded}
+                onClick={handleDownloadPdf}
+                // disabled={!coverLetterSections || isLoading || !libsLoaded}
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-blue-100 rounded-lg hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition"
-                //   title={
-                // !libsLoaded ? "PDF libraries are loading..." : "Download as PDF"
-                //   }
               >
                 <Download className="h-4 w-4" />
                 Download PDF
               </button>
               <button
-                //   onClick={handleDownloadPdf}
-                //   disabled={!coverLetterSections || isLoading || !libsLoaded}
+                onClick={handleCopyToClipboard}
                 className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 bg-blue-100 rounded-lg hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition"
-                //   title={
-                // !libsLoaded ? "PDF libraries are loading..." : "Download as PDF"
-                //   }
+                disabled={copied}
               >
                 <Copy className="h-4 w-4" />
-                Copy to Clipboard
+                {copied ? 'Copied to Clipboard' : 'Copy to Clipboard'}
               </button>
             </div>
           </div>

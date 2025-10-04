@@ -1,6 +1,7 @@
 import "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/HomePage/Home";
+import MobileBlocker from "./components/MobileBlocker";
 import Layout from "./components/Layout";
 // import NoPage from "./components/NoPage";
 import UserProfileForm from "./components/UserProfileForm";
@@ -14,17 +15,20 @@ const App = () => {
   console.log(import.meta.env.VITE_TEST);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/userForm" element={<UserProfileForm />} />
-          <Route path="/optimize-resume" element={<OptimizeResumeMain />} />
-          <Route path="/generate-cover-letter" element={<CoverLetterMain />} />
-        </Route>
-        <Route path="/signUp" element={<SignUp />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <MobileBlocker />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/userForm" element={<UserProfileForm />} />
+            <Route path="/optimize-resume" element={<OptimizeResumeMain />} />
+            <Route path="/generate-cover-letter" element={<CoverLetterMain />} />
+          </Route>
+          <Route path="/signUp" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 };
 
