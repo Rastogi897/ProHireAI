@@ -12,7 +12,6 @@ import OptimizeResumeMain from "./components/OptimizeResume/OptimizeResumeMain";
 import CoverLetterMain from "./components/GenerateCoverLetter/CoverLetterMain";
 
 const App = () => {
-  console.log(import.meta.env.VITE_TEST);
 
   return (
     <>
