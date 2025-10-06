@@ -1,4 +1,5 @@
 import "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/HomePage/Home";
 import MobileBlocker from "./components/MobileBlocker";
@@ -13,9 +14,21 @@ import CoverLetterMain from "./components/GenerateCoverLetter/CoverLetterMain";
 
 const App = () => {
 
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobileDevice(window.innerWidth <= 857);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  if (isMobileDevice) {
+    return <MobileBlocker />;
+  }
+
   return (
     <>
-      <MobileBlocker />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

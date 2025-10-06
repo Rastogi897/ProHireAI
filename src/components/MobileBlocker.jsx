@@ -1,22 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const isMobile = () => {
-    if (typeof window === "undefined") return false;
-    return window.innerWidth <= 767;
-};
-
 const MobileBlocker = () => {
-    const [showBlock, setShowBlock] = useState(isMobile());
-
-    useEffect(() => {
-        const handleResize = () => {
-            setShowBlock(isMobile());
-        };
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-
-    if (!showBlock) return null;
 
     return (
         <div style={{

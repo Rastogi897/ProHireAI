@@ -13,7 +13,7 @@ export const generatePrompt = (resumeText, jobDescription) => {
             
             Based on the analysis, provide:
             1. A "before" ATS score representing how well the current resume fits the job description. The score should be between 0 and 100.
-            2. A list of specific, actionable suggestions to improve the resume (at max 5, so list only most important 5). Format these as a list of points in short and execty where the improvements are needed.
+            2. A list of specific, actionable suggestions to improve the resume (at max 5, so list only most important 5). Format these as a list of points in short and execty where the improvements are needed. Don't keep long paragraphs, which are more than 2-3 lines.
             3. A projected "after" ATS match score if all suggestions are implemented. This score should be higher than the 'before' score and between 0 and 100.
             4. A "detailedChanges" section that contains at max 6 list of specific changes - those changes must be valid and impactful and not just be a 1-2 word change, where each item includes:
               - "from": a short snippet (up to 1-2 lines) from the resume that needs improvement, EXCEPT THE NAME AND PERSONLA DETAILS.,
